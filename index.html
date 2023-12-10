@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="css/first_style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="login">
+        <div class="header">
+          <h1><span class="fr">Login</span>_<span class="fr">Admin</span></h1>
+        </div>
+        <div class="main">
+          <form>
+            <input type="text" placeholder="Username" id="Username" />
+            <br />
+            <input type="password" placeholder="password" id="Password" />
+            <br />
+            <p id="incorrect">
+              incorrect username or passwords<span>!!!</span>
+            </p>
+            <br />
+          </form>
+          <button class= " btn"onclick="" id="btu_log">login</button>
+        </div>
+      </div>
+      <div class="img">
+        <span>
+          <h2 class="fr1">Welcome</h2>
+          <h1 class="fr">Students</h1>
+
+          <button onclick="window.location='home.html'">next</button>
+        </span>
+      </div>
+    </div>
+
+    <!-- verification for admin -->
+
+    <script>
+      let btu = document.getElementById("btu_log");
+
+      let username = document.getElementById("Username");
+
+      let password = document.getElementById("Password");
+      let incorrect = document.getElementById("incorrect");
+
+      btu.onclick = function () {
+        if (username.value == "admin" && password.value == "admin") {
+          window.location = "admin.php";
+        } else {
+          if (username != "admin" || password.value != "admin") {
+            incorrect.style.visibility = "visible";
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
